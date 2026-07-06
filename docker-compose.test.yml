@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  # Run unit tests inside Docker
+  unit-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    working_dir: /src
+    command: dotnet test test/CSharpApp.Tests/CSharpApp.Tests.csproj --logger "trx;LogFileName=test-results.trx" --logger "console;verbosity=detailed"
+    volumes:
+      - ./test-results:/src/test/CSharpApp.Tests/TestResults
+    networks:
+      - test-network
+
+  # Run the API for integration testing
+  api-for-tests:
+    image: csharpapp-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: csharpapp-api-test
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - RestApiSettings__BaseUrl=https://api.escuelajs.co/api/v1/
+      - RestApiSettings__Products=products
+      - RestApiSettings__Categories=categories
+      - RestApiSettings__Auth=auth/login
+      - RestApiSettings__Username=john@mail.com
+      - RestApiSettings__Password=changeme
+    ports:
+      - "8080:8080"
+    networks:
+      - test-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/v1/categories || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # Simple integration test runner
+  integration-tests:
+    image: mcr.microsoft.com/dotnet/sdk:9.0
+    working_dir: /tests
+    depends_on:
+      api-for-tests:
+        condition: service_healthy
+    command: >
+      sh -c "
+        echo 'Running integration tests...' &&
+        echo '' &&
+        echo '=== Test 1: Get Categories ===' &&
+        curl -f -s http://api-for-tests:8080/api/v1/categories | head -c 200 &&
+        echo '' &&
+        echo '' &&
+        echo '=== Test 2: Get Category by ID ===' &&
+        curl -f -s http://api-for-tests:8080/api/v1/categories/1 &&
+        echo '' &&
+        echo '' &&
+        echo '=== Test 3: Get Products ===' &&
+        curl -f -s http://api-for-tests:8080/api/v1/products?limit=2 | head -c 300 &&
+        echo '' &&
+        echo '' &&
+        echo '✅ All integration tests passed!'
+      "
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge

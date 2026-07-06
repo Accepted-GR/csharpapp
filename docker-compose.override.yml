@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  csharpapp-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Serilog__MinimumLevel__Default=Debug
+      - Serilog__MinimumLevel__Override__Microsoft=Information
+      - Serilog__MinimumLevel__Override__System.Net.Http.HttpClient=Debug
+    volumes:
+      - ./src:/src:ro
+    ports:
+      - "8080:8080"

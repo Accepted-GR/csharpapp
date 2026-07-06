@@ -1,0 +1,41 @@
+services:
+  api:
+    build:
+      context: ./src
+      dockerfile: CSharpApp.Api/Dockerfile
+    image: csharpapp/api:local
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - RESTAPI__PRODUCTS=/api/v1/products
+      - RESTAPI__CATEGORIES=/api/v1/categories
+      - RestApiSettings__Products=/api/v1/products
+      - RestApiSettings__Categories=/api/v1/categories
+    depends_on:
+      - mock-upstream
+
+  mock-upstream:
+    image: clue/json-server:latest
+    container_name: mock-upstream
+    ports:
+      - "3000:80"
+    volumes:
+      - ./docker/mock-data/db.json:/data/db.json:ro
+      - ./docker/mock-data/routes.json:/data/routes.json:ro
+    command: ["json-server", "--host", "0.0.0.0", "--watch", "/data/db.json", "--routes", "/data/routes.json", "--port", "80"]
+
+# Optional: add a 'tests' service to run test suite against the running api
+# tests:
+#   build:
+#     context: ./src
+#     dockerfile: CSharpApp.Api/Dockerfile
+#   command: ["dotnet", "test", "test/CSharpApp.Tests/CSharpApp.Tests.csproj"]
+#   depends_on:
+#     - api
+
+networks:
+  default:
+    name: csharpapp_default
+
+
