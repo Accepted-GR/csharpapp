@@ -1,5 +1,7 @@
 namespace CSharpApp.Core.Dtos;
 
+using System.Text.Json.Serialization;
+
 public sealed class Category
 {
     [JsonPropertyName("id")]

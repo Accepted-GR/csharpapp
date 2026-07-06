@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CSharpApp.Core\CSharpApp.Core.csproj" />
+      <ProjectReference Include="..\CSharpApp.Models\CSharpApp.Models.csproj" />
       <ProjectReference Include="..\CSharpApp.Infrastructure\CSharpApp.Infrastructure.csproj" />
     </ItemGroup>
 
