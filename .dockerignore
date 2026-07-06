@@ -1,0 +1,45 @@
+# Build results
+**/bin/
+**/obj/
+**/out/
+**/publish/
+
+# Test results
+**/*Tests/TestResults/
+**/*.trx
+**/*.coverage
+
+# User-specific files
+**/*.user
+**/*.suo
+**/*.userosscache
+**/.vs/
+
+# Build artifacts
+**/.vscode/
+**/.idea/
+*.sln.DotSettings.user
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docker
+**/.dockerignore
+**/Dockerfile*
+**/docker-compose*
+
+# Documentation
+**/*.md
+!README.Docker.md
+
+# NuGet
+**/*.nupkg
+**/.nuget/
+
+# Misc
+**/node_modules/
+**/npm-debug.log
+**/.DS_Store
+**/Thumbs.db
