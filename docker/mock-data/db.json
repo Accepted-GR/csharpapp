@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "title": "Test Product", "price": 100 },
+    { "id": 2, "title": "Another Product", "price": 50 }
+  ],
+  "categories": [
+    { "id": 1, "name": "Electronics", "image": "/img.png" },
+    { "id": 2, "name": "Books", "image": "/books.png" }
+  ]
+}
