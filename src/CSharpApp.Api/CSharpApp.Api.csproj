@@ -14,11 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CSharpApp.Core\CSharpApp.Core.csproj" />
+      <ProjectReference Include="..\CSharpApp.Models\CSharpApp.Models.csproj" />
       <ProjectReference Include="..\CSharpApp.Infrastructure\CSharpApp.Infrastructure.csproj" />
     </ItemGroup>
 
