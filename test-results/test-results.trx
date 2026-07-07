@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="eeee0156-99bc-46fb-b3d3-c8118ee02a46" name="@1be18a5a8f10 2026-07-06 22:52:54" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-07-06T22:52:54.7511501+00:00" queuing="2026-07-06T22:52:54.7511502+00:00" start="2026-07-06T22:52:52.8636860+00:00" finish="2026-07-06T22:52:55.0013462+00:00" />
+  <TestSettings name="default" id="09c39151-dbca-401a-b192-0793f1061c5b">
+    <Deployment runDeploymentRoot="_1be18a5a8f10_2026-07-06_22_52_54" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="506260ce-dd9a-4de4-a830-e5f591ee4055" testId="f5f9b113-f2ac-183d-a12a-c5c4057d0f85" testName="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.RetriesOn401_RefreshesToken" computerName="1be18a5a8f10" duration="00:00:00.0293252" startTime="2026-07-06T22:52:54.6497873+00:00" endTime="2026-07-06T22:52:54.6497873+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="506260ce-dd9a-4de4-a830-e5f591ee4055" />
+    <UnitTestResult executionId="290c1401-6a85-433f-b839-9dea4eca300f" testId="4e8475c2-f94e-a1c9-dc28-6c41c7653abe" testName="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsInvalid_WhenNameMissing" computerName="1be18a5a8f10" duration="00:00:00.0266894" startTime="2026-07-06T22:52:54.4486253+00:00" endTime="2026-07-06T22:52:54.4486531+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="290c1401-6a85-433f-b839-9dea4eca300f" />
+    <UnitTestResult executionId="9a1ded53-a56a-4455-91d4-fdadb28f9b0e" testId="a534cc9c-1e1c-9609-945d-1a5b0fe997c1" testName="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.Middleware_DoesNotLog_WhenPathExcluded" computerName="1be18a5a8f10" duration="00:00:00.1149632" startTime="2026-07-06T22:52:54.6534171+00:00" endTime="2026-07-06T22:52:54.6534171+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9a1ded53-a56a-4455-91d4-fdadb28f9b0e" />
+    <UnitTestResult executionId="a8d986a0-5c3e-40d0-86cb-d46ad78b39db" testId="39f85cfe-cdb1-6492-7e01-4498ac73c802" testName="CSharpApp.Tests.CategoryMapperTests.MapFromCreateRequest_MapsNameAndImage" computerName="1be18a5a8f10" duration="00:00:00.0076604" startTime="2026-07-06T22:52:54.6494676+00:00" endTime="2026-07-06T22:52:54.6494677+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a8d986a0-5c3e-40d0-86cb-d46ad78b39db" />
+    <UnitTestResult executionId="4a449105-bfa3-48c9-a74b-4b133d778726" testId="bc32d102-084c-57a4-bde7-ce33b228d6c5" testName="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.Middleware_LogsWarning_ForSlowRequest" computerName="1be18a5a8f10" duration="00:00:00.0652136" startTime="2026-07-06T22:52:54.6980661+00:00" endTime="2026-07-06T22:52:54.6980662+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4a449105-bfa3-48c9-a74b-4b133d778726" />
+    <UnitTestResult executionId="2c031b88-f509-4c7d-82e9-178b6ff06c87" testId="d9269d2c-d1d9-d0c7-2dde-a70db858c69b" testName="CSharpApp.Tests.CategoriesServiceTests.CreateCategory_ReturnsCreatedCategory_WhenSuccess" computerName="1be18a5a8f10" duration="00:00:00.1825633" startTime="2026-07-06T22:52:54.6536868+00:00" endTime="2026-07-06T22:52:54.6536868+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c031b88-f509-4c7d-82e9-178b6ff06c87" />
+    <UnitTestResult executionId="e974cccc-4719-4452-a022-17000bb31655" testId="ffd41af0-5f8e-a9d1-8c9c-9eee3812fd17" testName="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.HttpClientMetricsHandler_LogsWarning_ForSlowOutgoing" computerName="1be18a5a8f10" duration="00:00:00.1032966" startTime="2026-07-06T22:52:54.6535649+00:00" endTime="2026-07-06T22:52:54.6535650+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e974cccc-4719-4452-a022-17000bb31655" />
+    <UnitTestResult executionId="60151dde-7f9a-4b8b-8a42-88146f6fe6b7" testId="203e804f-0ce8-2416-c9fb-363912edd6f3" testName="CSharpApp.Tests.ProductsServiceTests.CreateProduct_ReturnsCreatedProduct_WhenSuccess" computerName="1be18a5a8f10" duration="00:00:00.0403366" startTime="2026-07-06T22:52:54.6875815+00:00" endTime="2026-07-06T22:52:54.6875816+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="60151dde-7f9a-4b8b-8a42-88146f6fe6b7" />
+    <UnitTestResult executionId="56909edc-4ebe-43b0-b50c-8171ca5be599" testId="3ae9caa6-893b-e3a0-3f63-5c161f6e1a13" testName="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsInvalid_WhenNameMissing" computerName="1be18a5a8f10" duration="00:00:00.0006953" startTime="2026-07-06T22:52:54.6495687+00:00" endTime="2026-07-06T22:52:54.6495687+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56909edc-4ebe-43b0-b50c-8171ca5be599" />
+    <UnitTestResult executionId="bc49d118-6d62-44a7-be57-c09fc304fe3b" testId="cb7637ef-0b88-998d-02bd-57db9f91fd48" testName="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" computerName="1be18a5a8f10" duration="00:00:00.0001643" startTime="2026-07-06T22:52:54.4743287+00:00" endTime="2026-07-06T22:52:54.4743287+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc49d118-6d62-44a7-be57-c09fc304fe3b" />
+    <UnitTestResult executionId="8c29774c-969c-426e-bd82-c6f14baefced" testId="e3d904cf-4bb7-f69a-d1bd-7840370c65ce" testName="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.PropagatesException_WhenTokenServiceFails" computerName="1be18a5a8f10" duration="00:00:00.0202744" startTime="2026-07-06T22:52:54.6532225+00:00" endTime="2026-07-06T22:52:54.6532226+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8c29774c-969c-426e-bd82-c6f14baefced" />
+    <UnitTestResult executionId="54c2a045-440e-4c8e-bf82-c27f59cda7e3" testId="2d7c9c00-7358-5eef-eced-7dfe399c7eda" testName="CSharpApp.Tests.ProductsServiceTests.GetProductById_ReturnsProduct_WhenFound" computerName="1be18a5a8f10" duration="00:00:00.1358839" startTime="2026-07-06T22:52:54.6536188+00:00" endTime="2026-07-06T22:52:54.6536189+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54c2a045-440e-4c8e-bf82-c27f59cda7e3" />
+    <UnitTestResult executionId="a5ce4c17-a282-4cb6-8a74-7a9f037dd0d7" testId="3a1647d9-22bb-508d-99a8-08dbea7d2c50" testName="CSharpApp.Tests.CategoriesServiceTests.GetCategoryById_ReturnsCategory_WhenFound" computerName="1be18a5a8f10" duration="00:00:00.0021920" startTime="2026-07-06T22:52:54.6537475+00:00" endTime="2026-07-06T22:52:54.6537475+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5ce4c17-a282-4cb6-8a74-7a9f037dd0d7" />
+    <UnitTestResult executionId="94015efb-3953-4b78-8ca6-1c9fcb5b742a" testId="1386cf22-b167-450c-6c82-ec7696efbd84" testName="CSharpApp.Tests.ProductMapperTests.MapFromCreateRequest_MapsFields" computerName="1be18a5a8f10" duration="00:00:00.0408178" startTime="2026-07-06T22:52:54.4687114+00:00" endTime="2026-07-06T22:52:54.4687115+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94015efb-3953-4b78-8ca6-1c9fcb5b742a" />
+    <UnitTestResult executionId="3358b525-5ddf-462a-99da-9b4a2c487d97" testId="e64885cc-fb8b-172c-b6d8-ca6f29b7949e" testName="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsInvalid_WhenRequestIsNull" computerName="1be18a5a8f10" duration="00:00:00.0001342" startTime="2026-07-06T22:52:54.6497297+00:00" endTime="2026-07-06T22:52:54.6497297+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3358b525-5ddf-462a-99da-9b4a2c487d97" />
+    <UnitTestResult executionId="3eebb7d7-8c9f-47bb-b073-61aee9b065a5" testId="c30d4e5d-c806-eb0e-7ed8-4f35aa291ee9" testName="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.AddsAuthorizationHeader_WhenTokenAvailable" computerName="1be18a5a8f10" duration="00:00:00.0014161" startTime="2026-07-06T22:52:54.6533637+00:00" endTime="2026-07-06T22:52:54.6533638+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3eebb7d7-8c9f-47bb-b073-61aee9b065a5" />
+    <UnitTestResult executionId="3be230e0-a5e4-4a6e-b925-ca284b45aa8d" testId="69559b55-ef34-9f5b-41fe-197ec072a671" testName="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsValid_WhenDataIsGood" computerName="1be18a5a8f10" duration="00:00:00.0004130" startTime="2026-07-06T22:52:54.6286815+00:00" endTime="2026-07-06T22:52:54.6286817+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3be230e0-a5e4-4a6e-b925-ca284b45aa8d" />
+    <UnitTestResult executionId="5a3561a0-69a3-4ae0-82c8-9ef9191197c2" testId="2136d976-d7f9-cd98-efc4-efdfea56a7f8" testName="CSharpApp.Tests.TokenServiceTests.AcquireToken_ReturnsTokenAndCaches_WhenAuthSuccess" computerName="1be18a5a8f10" duration="00:00:00.2742754" startTime="2026-07-06T22:52:54.6814007+00:00" endTime="2026-07-06T22:52:54.6814008+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a3561a0-69a3-4ae0-82c8-9ef9191197c2" />
+    <UnitTestResult executionId="9930f7e9-ce9b-44d1-aa7e-9f61a062697a" testId="bbfab51e-91a8-8663-4334-ec105b71d305" testName="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenPriceNonPositive" computerName="1be18a5a8f10" duration="00:00:00.0001851" startTime="2026-07-06T22:52:54.6494011+00:00" endTime="2026-07-06T22:52:54.6494012+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9930f7e9-ce9b-44d1-aa7e-9f61a062697a" />
+    <UnitTestResult executionId="3bd64b27-2b03-448f-90f2-8e2d5f244e88" testId="034007e7-a443-73b1-da6a-9c0755d3fb68" testName="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsValid_WhenNameProvided" computerName="1be18a5a8f10" duration="00:00:00.0033992" startTime="2026-07-06T22:52:54.4739903+00:00" endTime="2026-07-06T22:52:54.4739904+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bd64b27-2b03-448f-90f2-8e2d5f244e88" />
+    <UnitTestResult executionId="aca4e69e-9a6e-41ef-a80d-17e490ec66c7" testId="fe6d41d6-0c3f-007f-5909-5e86eb6b1c99" testName="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenTitleMissing" computerName="1be18a5a8f10" duration="00:00:00.0011388" startTime="2026-07-06T22:52:54.4742760+00:00" endTime="2026-07-06T22:52:54.4742761+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aca4e69e-9a6e-41ef-a80d-17e490ec66c7" />
+    <UnitTestResult executionId="bce7f93f-fc15-45e8-8451-71ec86116257" testId="8aa69369-94cf-f376-86be-c594aefa3f8a" testName="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" computerName="1be18a5a8f10" duration="00:00:00.0002507" startTime="2026-07-06T22:52:54.4740531+00:00" endTime="2026-07-06T22:52:54.4740532+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bce7f93f-fc15-45e8-8451-71ec86116257" />
+    <UnitTestResult executionId="a06f103c-9c67-452e-a8d3-619127f2ed01" testId="c3e9256a-b9bf-b399-1b20-fd5c1970f0bf" testName="CSharpApp.Tests.TokenServiceTests.AcquireToken_Throws_OnNonSuccessStatusCode" computerName="1be18a5a8f10" duration="00:00:00.0025023" startTime="2026-07-06T22:52:54.6826638+00:00" endTime="2026-07-06T22:52:54.6826639+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a06f103c-9c67-452e-a8d3-619127f2ed01" />
+    <UnitTestResult executionId="a00ae2f4-070c-4896-974c-72e580320c3c" testId="93331aaa-11d7-abee-7dc0-d17046acf669" testName="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsValid_WhenNameProvided" computerName="1be18a5a8f10" duration="00:00:00.0001331" startTime="2026-07-06T22:52:54.6496181+00:00" endTime="2026-07-06T22:52:54.6496182+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a00ae2f4-070c-4896-974c-72e580320c3c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.RetriesOn401_RefreshesToken" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="f5f9b113-f2ac-183d-a12a-c5c4057d0f85">
+      <Execution id="506260ce-dd9a-4de4-a830-e5f591ee4055" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.AuthenticationDelegatingHandlerTests" name="RetriesOn401_RefreshesToken" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenPriceNonPositive" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="bbfab51e-91a8-8663-4334-ec105b71d305">
+      <Execution id="9930f7e9-ce9b-44d1-aa7e-9f61a062697a" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductValidatorTests" name="ValidateForCreate_ReturnsInvalid_WhenPriceNonPositive" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.HttpClientMetricsHandler_LogsWarning_ForSlowOutgoing" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="ffd41af0-5f8e-a9d1-8c9c-9eee3812fd17">
+      <Execution id="e974cccc-4719-4452-a022-17000bb31655" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests" name="HttpClientMetricsHandler_LogsWarning_ForSlowOutgoing" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.AddsAuthorizationHeader_WhenTokenAvailable" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="c30d4e5d-c806-eb0e-7ed8-4f35aa291ee9">
+      <Execution id="3eebb7d7-8c9f-47bb-b073-61aee9b065a5" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.AuthenticationDelegatingHandlerTests" name="AddsAuthorizationHeader_WhenTokenAvailable" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductsServiceTests.CreateProduct_ReturnsCreatedProduct_WhenSuccess" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="203e804f-0ce8-2416-c9fb-363912edd6f3">
+      <Execution id="60151dde-7f9a-4b8b-8a42-88146f6fe6b7" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductsServiceTests" name="CreateProduct_ReturnsCreatedProduct_WhenSuccess" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductMapperTests.MapFromCreateRequest_MapsFields" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="1386cf22-b167-450c-6c82-ec7696efbd84">
+      <Execution id="94015efb-3953-4b78-8ca6-1c9fcb5b742a" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductMapperTests" name="MapFromCreateRequest_MapsFields" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsValid_WhenNameProvided" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="93331aaa-11d7-abee-7dc0-d17046acf669">
+      <Execution id="a00ae2f4-070c-4896-974c-72e580320c3c" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CreateCategoryValidatorTests" name="Validate_ReturnsValid_WhenNameProvided" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsValid_WhenDataIsGood" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="69559b55-ef34-9f5b-41fe-197ec072a671">
+      <Execution id="3be230e0-a5e4-4a6e-b925-ca284b45aa8d" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductValidatorTests" name="ValidateForCreate_ReturnsValid_WhenDataIsGood" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoriesServiceTests.CreateCategory_ReturnsCreatedCategory_WhenSuccess" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="d9269d2c-d1d9-d0c7-2dde-a70db858c69b">
+      <Execution id="2c031b88-f509-4c7d-82e9-178b6ff06c87" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoriesServiceTests" name="CreateCategory_ReturnsCreatedCategory_WhenSuccess" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="cb7637ef-0b88-998d-02bd-57db9f91fd48">
+      <Execution id="bc49d118-6d62-44a7-be57-c09fc304fe3b" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductValidatorTests" name="ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsInvalid_WhenNameMissing" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="4e8475c2-f94e-a1c9-dc28-6c41c7653abe">
+      <Execution id="290c1401-6a85-433f-b839-9dea4eca300f" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoryValidatorTests" name="ValidateForCreate_ReturnsInvalid_WhenNameMissing" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.Middleware_LogsWarning_ForSlowRequest" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="bc32d102-084c-57a4-bde7-ce33b228d6c5">
+      <Execution id="4a449105-bfa3-48c9-a74b-4b133d778726" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests" name="Middleware_LogsWarning_ForSlowRequest" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.TokenServiceTests.AcquireToken_Throws_OnNonSuccessStatusCode" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="c3e9256a-b9bf-b399-1b20-fd5c1970f0bf">
+      <Execution id="a06f103c-9c67-452e-a8d3-619127f2ed01" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.TokenServiceTests" name="AcquireToken_Throws_OnNonSuccessStatusCode" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.AuthenticationDelegatingHandlerTests.PropagatesException_WhenTokenServiceFails" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="e3d904cf-4bb7-f69a-d1bd-7840370c65ce">
+      <Execution id="8c29774c-969c-426e-bd82-c6f14baefced" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.AuthenticationDelegatingHandlerTests" name="PropagatesException_WhenTokenServiceFails" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoriesServiceTests.GetCategoryById_ReturnsCategory_WhenFound" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="3a1647d9-22bb-508d-99a8-08dbea7d2c50">
+      <Execution id="a5ce4c17-a282-4cb6-8a74-7a9f037dd0d7" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoriesServiceTests" name="GetCategoryById_ReturnsCategory_WhenFound" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="8aa69369-94cf-f376-86be-c594aefa3f8a">
+      <Execution id="bce7f93f-fc15-45e8-8451-71ec86116257" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoryValidatorTests" name="ValidateForCreate_ReturnsInvalid_WhenRequestIsNull" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductsServiceTests.GetProductById_ReturnsProduct_WhenFound" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="2d7c9c00-7358-5eef-eced-7dfe399c7eda">
+      <Execution id="54c2a045-440e-4c8e-bf82-c27f59cda7e3" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductsServiceTests" name="GetProductById_ReturnsProduct_WhenFound" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsInvalid_WhenRequestIsNull" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="e64885cc-fb8b-172c-b6d8-ca6f29b7949e">
+      <Execution id="3358b525-5ddf-462a-99da-9b4a2c487d97" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CreateCategoryValidatorTests" name="Validate_ReturnsInvalid_WhenRequestIsNull" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoryMapperTests.MapFromCreateRequest_MapsNameAndImage" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="39f85cfe-cdb1-6492-7e01-4498ac73c802">
+      <Execution id="a8d986a0-5c3e-40d0-86cb-d46ad78b39db" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoryMapperTests" name="MapFromCreateRequest_MapsNameAndImage" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.TokenServiceTests.AcquireToken_ReturnsTokenAndCaches_WhenAuthSuccess" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="2136d976-d7f9-cd98-efc4-efdfea56a7f8">
+      <Execution id="5a3561a0-69a3-4ae0-82c8-9ef9191197c2" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.TokenServiceTests" name="AcquireToken_ReturnsTokenAndCaches_WhenAuthSuccess" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CreateCategoryValidatorTests.Validate_ReturnsInvalid_WhenNameMissing" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="3ae9caa6-893b-e3a0-3f63-5c161f6e1a13">
+      <Execution id="56909edc-4ebe-43b0-b50c-8171ca5be599" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CreateCategoryValidatorTests" name="Validate_ReturnsInvalid_WhenNameMissing" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.ProductValidatorTests.ValidateForCreate_ReturnsInvalid_WhenTitleMissing" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="fe6d41d6-0c3f-007f-5909-5e86eb6b1c99">
+      <Execution id="aca4e69e-9a6e-41ef-a80d-17e490ec66c7" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.ProductValidatorTests" name="ValidateForCreate_ReturnsInvalid_WhenTitleMissing" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.CategoryValidatorTests.ValidateForCreate_ReturnsValid_WhenNameProvided" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="034007e7-a443-73b1-da6a-9c0755d3fb68">
+      <Execution id="3bd64b27-2b03-448f-90f2-8e2d5f244e88" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.CategoryValidatorTests" name="ValidateForCreate_ReturnsValid_WhenNameProvided" />
+    </UnitTest>
+    <UnitTest name="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests.Middleware_DoesNotLog_WhenPathExcluded" storage="/src/test/csharpapp.tests/bin/debug/net9.0/csharpapp.tests.dll" id="a534cc9c-1e1c-9609-945d-1a5b0fe997c1">
+      <Execution id="9a1ded53-a56a-4455-91d4-fdadb28f9b0e" />
+      <TestMethod codeBase="/src/test/CSharpApp.Tests/bin/Debug/net9.0/CSharpApp.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="CSharpApp.Tests.Middlewares.PerformanceMiddlewareTests" name="Middleware_DoesNotLog_WhenPathExcluded" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f5f9b113-f2ac-183d-a12a-c5c4057d0f85" executionId="506260ce-dd9a-4de4-a830-e5f591ee4055" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e8475c2-f94e-a1c9-dc28-6c41c7653abe" executionId="290c1401-6a85-433f-b839-9dea4eca300f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a534cc9c-1e1c-9609-945d-1a5b0fe997c1" executionId="9a1ded53-a56a-4455-91d4-fdadb28f9b0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39f85cfe-cdb1-6492-7e01-4498ac73c802" executionId="a8d986a0-5c3e-40d0-86cb-d46ad78b39db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc32d102-084c-57a4-bde7-ce33b228d6c5" executionId="4a449105-bfa3-48c9-a74b-4b133d778726" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9269d2c-d1d9-d0c7-2dde-a70db858c69b" executionId="2c031b88-f509-4c7d-82e9-178b6ff06c87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ffd41af0-5f8e-a9d1-8c9c-9eee3812fd17" executionId="e974cccc-4719-4452-a022-17000bb31655" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="203e804f-0ce8-2416-c9fb-363912edd6f3" executionId="60151dde-7f9a-4b8b-8a42-88146f6fe6b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ae9caa6-893b-e3a0-3f63-5c161f6e1a13" executionId="56909edc-4ebe-43b0-b50c-8171ca5be599" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb7637ef-0b88-998d-02bd-57db9f91fd48" executionId="bc49d118-6d62-44a7-be57-c09fc304fe3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3d904cf-4bb7-f69a-d1bd-7840370c65ce" executionId="8c29774c-969c-426e-bd82-c6f14baefced" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d7c9c00-7358-5eef-eced-7dfe399c7eda" executionId="54c2a045-440e-4c8e-bf82-c27f59cda7e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a1647d9-22bb-508d-99a8-08dbea7d2c50" executionId="a5ce4c17-a282-4cb6-8a74-7a9f037dd0d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1386cf22-b167-450c-6c82-ec7696efbd84" executionId="94015efb-3953-4b78-8ca6-1c9fcb5b742a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e64885cc-fb8b-172c-b6d8-ca6f29b7949e" executionId="3358b525-5ddf-462a-99da-9b4a2c487d97" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30d4e5d-c806-eb0e-7ed8-4f35aa291ee9" executionId="3eebb7d7-8c9f-47bb-b073-61aee9b065a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="69559b55-ef34-9f5b-41fe-197ec072a671" executionId="3be230e0-a5e4-4a6e-b925-ca284b45aa8d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2136d976-d7f9-cd98-efc4-efdfea56a7f8" executionId="5a3561a0-69a3-4ae0-82c8-9ef9191197c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bbfab51e-91a8-8663-4334-ec105b71d305" executionId="9930f7e9-ce9b-44d1-aa7e-9f61a062697a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="034007e7-a443-73b1-da6a-9c0755d3fb68" executionId="3bd64b27-2b03-448f-90f2-8e2d5f244e88" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe6d41d6-0c3f-007f-5909-5e86eb6b1c99" executionId="aca4e69e-9a6e-41ef-a80d-17e490ec66c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8aa69369-94cf-f376-86be-c594aefa3f8a" executionId="bce7f93f-fc15-45e8-8451-71ec86116257" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3e9256a-b9bf-b399-1b20-fd5c1970f0bf" executionId="a06f103c-9c67-452e-a8d3-619127f2ed01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93331aaa-11d7-abee-7dc0-d17046acf669" executionId="a00ae2f4-070c-4896-974c-72e580320c3c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="24" executed="24" passed="24" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 9.0.17)
+[xUnit.net 00:00:00.24]   Discovering: CSharpApp.Tests
+[xUnit.net 00:00:00.32]   Discovered:  CSharpApp.Tests
+[xUnit.net 00:00:00.33]   Starting:    CSharpApp.Tests
+[HttpClientMetricsHandler] Warning: OUTGOING GET https://api.test/ responded OK in 57ms | TraceId=
+[PerformanceLoggingMiddleware] Warning: SLOW REQUEST  /slow responded 200 in 62ms | TraceId=0HNMRM58EHS8G
+[xUnit.net 00:00:00.75]   Finished:    CSharpApp.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

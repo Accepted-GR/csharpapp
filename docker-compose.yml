@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  csharpapp-api:
+    image: csharpapp-api:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: csharpapp-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - RestApiSettings__BaseUrl=https://api.escuelajs.co/api/v1/
+      - RestApiSettings__Products=products
+      - RestApiSettings__Categories=categories
+      - RestApiSettings__Auth=auth/login
+      - RestApiSettings__Username=john@mail.com
+      - RestApiSettings__Password=changeme
+      - HttpClientSettings__LifeTime=10
+      - HttpClientSettings__RetryCount=2
+      - HttpClientSettings__SleepDuration=100
+      - Serilog__MinimumLevel__Default=Information
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/v1/products?limit=1 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - csharpapp-network
+
+networks:
+  csharpapp-network:
+    driver: bridge
