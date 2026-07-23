@@ -1,6 +1,7 @@
 @HostAddress = http://localhost:5225
 @Version = v1
 @ProductId = 22
+@CategoryId = 1
 
 GET {{HostAddress}}/api/{{Version}}/getproducts
 Accept: application/json
@@ -17,11 +18,32 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "title": "New Product sfdsdsdfgscgccsdfsdfsdf",
+  "title": <insert a random string>,
   "price": 1,
   "description": "A description of the product",
   "categoryId": 1,
   "images": [
     "https://example.com/image.jpg"
   ]
+}
+
+###
+
+GET {{HostAddress}}/api/{{Version}}/getcategories
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/api/{{Version}}/categories/{{CategoryId}}
+Accept: application/json
+
+###
+
+POST {{HostAddress}}/api/{{Version}}/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": <insert a random string>,
+  "image": "https://example.com/image.jpg"
 }

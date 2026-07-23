@@ -8,7 +8,7 @@ namespace CSharpApp.Core.Dtos
 		public string Title { get; init; } = string.Empty;
 
 		[Required]
-		public float Price { get; init; }
+		public int Price { get; init; }
 
 		[Required]
 		public string Description { get; init; } = string.Empty;
