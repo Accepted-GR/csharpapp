@@ -18,4 +18,8 @@
       <ProjectReference Include="..\CSharpApp.Core\CSharpApp.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <InternalsVisibleTo Include="ApplicationTests" />
+    </ItemGroup>
+
 </Project>

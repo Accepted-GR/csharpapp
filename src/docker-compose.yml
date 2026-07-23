@@ -1,0 +1,6 @@
+services:
+  csharpapp.api:
+    image: ${DOCKER_REGISTRY-}csharpappapi
+    build:
+      context: .
+      dockerfile: CSharpApp.Api/Dockerfile
