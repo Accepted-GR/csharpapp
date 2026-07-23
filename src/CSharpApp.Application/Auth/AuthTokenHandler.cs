@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 namespace CSharpApp.Application.Auth
 {
-	public class AuthTokenHandler : DelegatingHandler
+	internal class AuthTokenHandler : DelegatingHandler
 	{
 		private readonly IAuthService _authService;
 

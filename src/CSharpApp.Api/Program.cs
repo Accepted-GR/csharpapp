@@ -1,3 +1,4 @@
+using CSharpApp.Api.Middleware;
 using CSharpApp.Application.Categories.Commands;
 using CSharpApp.Application.Categories.Queries;
 using CSharpApp.Application.Products.Commands;
@@ -20,6 +21,8 @@ builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning();
 
 var app = builder.Build();
+
+app.UseRequestTiming();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

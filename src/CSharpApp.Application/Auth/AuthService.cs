@@ -3,7 +3,7 @@ using Microsoft.Extensions.Caching.Hybrid;
 
 namespace CSharpApp.Application.Auth
 {
-	public class AuthService : IAuthService
+	internal class AuthService : IAuthService
 	{
 		private readonly IAuthApiClient _authApiClient;
 		private readonly HybridCache _cache;

@@ -2,7 +2,7 @@ using System.Net.Http.Json;
 
 namespace CSharpApp.Application.Auth
 {
-	public class AuthApiClient : IAuthApiClient
+	internal class AuthApiClient : IAuthApiClient
 	{
 		private readonly HttpClient _httpClient;
 		private readonly RestApiSettings _settings;
