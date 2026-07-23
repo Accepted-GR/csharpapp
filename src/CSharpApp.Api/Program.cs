@@ -1,5 +1,8 @@
+using CSharpApp.Application.Products.Commands;
 using CSharpApp.Application.Products.Queries;
+using CSharpApp.Core.Dtos;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,12 +29,34 @@ if (app.Environment.IsDevelopment())
 
 var versionedEndpointRouteBuilder = app.NewVersionedApi();
 
-versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts", async (IMediator mediator) =>
+versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts", async (IMediator mediator, CancellationToken cancellationToken) =>
 	{
-		var products = await mediator.Send(new GetProductsQuery());
-		return products;
+		var products = await mediator.Send(new GetProductsQuery(), cancellationToken);
+		return Results.Ok(products);
 	})
+	.WithGroupName("Products")
 	.WithName("GetProducts")
+	.HasApiVersion(1.0);
+
+versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/products/{id}", async (int id, IMediator mediator, CancellationToken cancellationToken) =>
+{
+	var product = await mediator.Send(new GetProductByIdQuery(id), cancellationToken);
+	return Results.Ok(product);
+})
+	.WithGroupName("Products")
+	.WithName("GetProduct")
+	.HasApiVersion(1.0);
+
+versionedEndpointRouteBuilder.MapPost("api/v{version:apiVersion}/products", async ([FromBody] CreateProductPayload payload, IMediator mediator, CancellationToken cancellationToken) =>
+{
+	var productId = await mediator.Send(new CreateProductCommand(payload), cancellationToken);
+
+	return productId is null
+		? Results.BadRequest()
+		: Results.Created();
+})
+	.WithGroupName("Products")
+	.WithName("CreateProduct")
 	.HasApiVersion(1.0);
 
 app.Run();

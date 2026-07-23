@@ -13,7 +13,7 @@ namespace CSharpApp.Application.Products.Queries
 
 		public async Task<GetProductsResponse> Handle(GetProductsQuery request, CancellationToken cancellationToken)
 		{
-			var products = await _productsService.GetProducts();
+			var products = await _productsService.GetProducts(cancellationToken);
 
 			return new GetProductsResponse()
 			{
