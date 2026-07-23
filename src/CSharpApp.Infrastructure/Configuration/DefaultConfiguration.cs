@@ -10,7 +10,11 @@ public static class DefaultConfiguration
 		services.Configure<RestApiSettings>(configuration!.GetSection(nameof(RestApiSettings)));
 		services.Configure<HttpClientSettings>(configuration.GetSection(nameof(HttpClientSettings)));
 
+		//Add Clients
 		services.AddHttpClient<IProductsService, ProductsService>();
+
+		//Add Mediator
+		services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
 
 		return services;
 	}
