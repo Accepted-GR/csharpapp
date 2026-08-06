@@ -17,11 +17,11 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
         <!--
-          TreatWarningsAsErrors is switched on at the end of Phase 1, once the
-          pre-existing CS8602 in ProductsService has been removed by the
-          HttpClient refactor. Turning it on before that would break the build.
+          Enabled once the Phase 1 refactor cleared the pre-existing CS8602,
+          CA1001 and IDE0052 warnings. From here on a new warning fails the
+          build rather than accumulating unnoticed.
         -->
-        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     </PropertyGroup>
 
 </Project>
