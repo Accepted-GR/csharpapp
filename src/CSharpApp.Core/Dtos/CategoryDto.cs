@@ -8,12 +8,15 @@ public sealed class Category
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
+    [JsonPropertyName("slug")]
+    public string? Slug { get; set; }
+
     [JsonPropertyName("image")]
     public string? Image { get; set; }
 
     [JsonPropertyName("creationAt")]
-    public DateTime? CreationAt { get; set; }
+    public DateTimeOffset? CreationAt { get; set; }
 
     [JsonPropertyName("updatedAt")]
-    public DateTime? UpdatedAt { get; set; }
+    public DateTimeOffset? UpdatedAt { get; set; }
 }
