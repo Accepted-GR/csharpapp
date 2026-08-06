@@ -29,15 +29,43 @@ public static class HttpConfiguration
         var httpSettings = configuration.GetSection(nameof(HttpClientSettings)).Get<HttpClientSettings>()
                            ?? new HttpClientSettings();
 
-        services.AddHttpClient<IProductsService, ProductsService>(client =>
-            {
-                client.BaseAddress = BuildBaseAddress(restApi.BaseUrl);
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            })
+        var baseAddress = BuildBaseAddress(restApi.BaseUrl);
+
+        services.AddTransient<BearerTokenHandler>();
+
+        // Singleton, so the cached token is shared across requests rather than
+        // re-acquired per request against a token that stays valid for days.
+        // It resolves clients from IHttpClientFactory rather than having one
+        // injected -- a singleton holding an HttpClient would pin its handler for
+        // the application's lifetime and defeat SetHandlerLifetime below.
+        services.AddSingleton<IAuthService, AuthService>();
+
+        // A named client, deliberately WITHOUT BearerTokenHandler. Attaching it here
+        // would mean acquiring a token requires a token, recursing until the stack
+        // runs out. This is the one client that must talk to upstream unauthenticated.
+        services.AddHttpClient(AuthService.HttpClientName, client => Configure(client, baseAddress))
+            .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))
+            .AddResilience(httpSettings);
+
+        // Every other client gets the token attached automatically, so no service
+        // has to ask for one and none can forget to.
+        services.AddHttpClient<IProductsService, ProductsService>(client => Configure(client, baseAddress))
+            .AddHttpMessageHandler<BearerTokenHandler>()
+            .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))
+            .AddResilience(httpSettings);
+
+        services.AddHttpClient<IProfileService, ProfileService>(client => Configure(client, baseAddress))
+            .AddHttpMessageHandler<BearerTokenHandler>()
             .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))
             .AddResilience(httpSettings);
 
         return services;
+    }
+
+    private static void Configure(HttpClient client, Uri baseAddress)
+    {
+        client.BaseAddress = baseAddress;
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
 
     /// <summary>

@@ -103,6 +103,11 @@ public sealed partial class UpstreamExceptionHandler : IExceptionHandler
         JsonException => (StatusCodes.Status502BadGateway,
             "The upstream service returned a malformed response.", true),
 
+        // Our credentials were rejected. A configuration problem on our side, but
+        // from the caller's perspective the upstream dependency is unusable.
+        AuthenticationFailedException => (StatusCodes.Status502BadGateway,
+            "Could not authenticate against the upstream service.", true),
+
         _ => (StatusCodes.Status500InternalServerError,
             "An unexpected error occurred.", false),
     };

@@ -13,7 +13,11 @@ public interface IAuthService
     Task<string> GetAccessTokenAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Returns the profile of the authenticated user.
+    /// Discards the cached token so the next call acquires a fresh one.
     /// </summary>
-    Task<UserProfile?> GetProfileAsync(CancellationToken cancellationToken = default);
+    /// <remarks>
+    /// Used when the upstream service rejects a token we believed was still valid,
+    /// which means our cached copy is stale rather than merely expired.
+    /// </remarks>
+    void InvalidateToken();
 }

@@ -8,12 +8,25 @@ namespace CSharpApp.Application.Authentication;
 /// authenticating once per request would be pointless work against a token that
 /// stays valid for days.
 ///
-/// The client injected here must NOT have the bearer-token handler attached, or
+/// Because it is a singleton it takes <see cref="IHttpClientFactory"/> and creates
+/// a client per call, rather than having one injected. A singleton holding an
+/// injected <see cref="HttpClient"/> is a captive dependency: it would pin one
+/// handler for the lifetime of the application, so <c>SetHandlerLifetime</c> would
+/// never rotate it and the connection would eventually go stale on a DNS change --
+/// exactly the problem Phase 1 set out to fix. Creating a client is cheap; the
+/// handler underneath is pooled and rotated by the factory.
+///
+/// The named client used here must NOT have the bearer-token handler attached, or
 /// acquiring a token would require a token and recurse. That separation is set up
 /// in <c>HttpConfiguration</c>.
 /// </remarks>
 public sealed partial class AuthService : IAuthService, IDisposable
 {
+    /// <summary>
+    /// Name of the deliberately unauthenticated client used to acquire tokens.
+    /// </summary>
+    public const string HttpClientName = "upstream-auth";
+
     /// <summary>
     /// How long before actual expiry a token is treated as stale. Covers clock skew
     /// between us and the upstream service, plus the flight time of the request the
@@ -28,7 +41,7 @@ public sealed partial class AuthService : IAuthService, IDisposable
     /// </summary>
     private static readonly TimeSpan FallbackLifetime = TimeSpan.FromMinutes(5);
 
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private readonly RestApiSettings _settings;
     private readonly TimeProvider _timeProvider;
     private readonly ILogger<AuthService> _logger;
@@ -40,12 +53,12 @@ public sealed partial class AuthService : IAuthService, IDisposable
     private CachedToken? _cached;
 
     public AuthService(
-        HttpClient httpClient,
+        IHttpClientFactory httpClientFactory,
         IOptions<RestApiSettings> settings,
         TimeProvider timeProvider,
         ILogger<AuthService> logger)
     {
-        _httpClient = httpClient;
+        _httpClientFactory = httpClientFactory;
         _settings = settings.Value;
         _timeProvider = timeProvider;
         _logger = logger;
@@ -101,14 +114,12 @@ public sealed partial class AuthService : IAuthService, IDisposable
         }
     }
 
-    public async Task<UserProfile?> GetProfileAsync(CancellationToken cancellationToken = default)
+    public void InvalidateToken()
     {
-        // The bearer handler attaches the token, so nothing to do here beyond the
-        // call itself. This exists mainly to give feature #3 an endpoint that
-        // actually proves the token pipeline works end to end -- the upstream API
-        // does not enforce auth on the product write endpoints.
-        return await _httpClient.GetFromJsonAsync<UserProfile>(
-            _settings.Profile!, cancellationToken);
+        // The refresh token is dropped along with the access token. If upstream has
+        // rejected one, the other is not worth trusting either.
+        _cached = null;
+        LogTokenInvalidated();
     }
 
     /// <summary>
@@ -151,7 +162,12 @@ public sealed partial class AuthService : IAuthService, IDisposable
         TRequest body,
         CancellationToken cancellationToken)
     {
-        using var response = await _httpClient.PostAsJsonAsync(path, body, cancellationToken);
+        // Created per call, not held as a field. See the note on captive
+        // dependencies in the class remarks. Not disposed: the factory owns the
+        // handler, and disposing the wrapper achieves nothing.
+        var client = _httpClientFactory.CreateClient(HttpClientName);
+
+        using var response = await client.PostAsJsonAsync(path, body, cancellationToken);
 
         if (response.StatusCode is HttpStatusCode.Unauthorized or HttpStatusCode.Forbidden)
         {
@@ -205,6 +221,9 @@ public sealed partial class AuthService : IAuthService, IDisposable
 
     [LoggerMessage(Level = LogLevel.Debug, Message = "Refreshing access token with the stored refresh token")]
     private partial void LogRefreshing();
+
+    [LoggerMessage(Level = LogLevel.Debug, Message = "Cached token discarded")]
+    private partial void LogTokenInvalidated();
 
     [LoggerMessage(Level = LogLevel.Information,
         Message = "Token refresh failed, falling back to a full login: {Reason}")]
