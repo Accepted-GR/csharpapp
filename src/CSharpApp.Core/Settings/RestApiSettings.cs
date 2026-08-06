@@ -32,6 +32,10 @@ public sealed class RestApiSettings
     public string? RefreshToken { get; set; }
 
     [Required]
+    [RelativePath]
+    public string? Profile { get; set; }
+
+    [Required]
     [EmailAddress]
     public string? Username { get; set; }
 
