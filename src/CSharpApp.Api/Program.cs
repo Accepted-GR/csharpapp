@@ -36,4 +36,13 @@ versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts",
     .WithName("GetProducts")
     .HasApiVersion(1.0);
 
+// Exercises the full JWT pipeline: the bearer handler acquires and attaches a
+// token, and upstream rejects the call without one. The product write endpoints
+// cannot demonstrate this -- upstream does not enforce auth on them.
+versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/auth/profile",
+        async (IProfileService profileService, CancellationToken cancellationToken) =>
+            await profileService.GetProfileAsync(cancellationToken))
+    .WithName("GetProfile")
+    .HasApiVersion(1.0);
+
 app.Run();

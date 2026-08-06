@@ -2,6 +2,7 @@
 
 global using System.Text.Json;
 global using CSharpApp.Api.Middleware;
+global using CSharpApp.Core.Exceptions;
 global using CSharpApp.Core.Interfaces;
 global using CSharpApp.Infrastructure.Configuration;
 global using Microsoft.AspNetCore.Diagnostics;
