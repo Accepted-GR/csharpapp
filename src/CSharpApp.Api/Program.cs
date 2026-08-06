@@ -11,9 +11,16 @@ builder.Services.AddHttpConfiguration(builder.Configuration);
 builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning();
 
+// ProblemDetails was registered but never activated, so nothing translated an
+// exception into a payload. See finding #6 in docs/AUDIT.md.
+builder.Services.AddExceptionHandler<UpstreamExceptionHandler>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseExceptionHandler();
+app.UseStatusCodePages();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
