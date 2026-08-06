@@ -1,0 +1,27 @@
+<Project>
+
+    <!--
+      Common build settings for every project in the repository.
+      Keeping these here avoids the drift that comes from repeating the same
+      four properties in every .csproj.
+    -->
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AnalysisLevel>latest-recommended</AnalysisLevel>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+        <!--
+          TreatWarningsAsErrors is switched on at the end of Phase 1, once the
+          pre-existing CS8602 in ProductsService has been removed by the
+          HttpClient refactor. Turning it on before that would break the build.
+        -->
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+</Project>
