@@ -7,7 +7,7 @@ builder.Logging.ClearProviders().AddSerilog(logger);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddDefaultConfiguration(builder.Configuration);
-builder.Services.AddHttpConfiguration();
+builder.Services.AddHttpConfiguration(builder.Configuration);
 builder.Services.AddProblemDetails();
 builder.Services.AddApiVersioning();
 
@@ -23,11 +23,9 @@ if (app.Environment.IsDevelopment())
 
 var versionedEndpointRouteBuilder = app.NewVersionedApi();
 
-versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts", async (IProductsService productsService) =>
-    {
-        var products = await productsService.GetProducts();
-        return products;
-    })
+versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts",
+        async (IProductsService productsService, CancellationToken cancellationToken) =>
+            await productsService.GetProductsAsync(cancellationToken))
     .WithName("GetProducts")
     .HasApiVersion(1.0);
 

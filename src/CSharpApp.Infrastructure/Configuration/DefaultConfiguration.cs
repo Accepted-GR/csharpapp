@@ -29,8 +29,6 @@ public static class DefaultConfiguration
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
-        services.AddSingleton<IProductsService, ProductsService>();
-
         return services;
     }
 }
