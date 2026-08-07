@@ -1,0 +1,29 @@
+// Global using directives
+
+global using System.Globalization;
+global using System.Net;
+global using System.Net.Http.Json;
+global using System.Text;
+global using CSharpApp.Application.Authentication;
+global using CSharpApp.Application.Categories;
+global using CSharpApp.Application.Products;
+global using CSharpApp.Core.Dtos;
+global using CSharpApp.Core.Exceptions;
+global using CSharpApp.Core.Interfaces;
+global using CSharpApp.Core.Settings;
+global using CSharpApp.Infrastructure.Http;
+global using CSharpApp.Api.Middleware;
+global using CSharpApp.Tests.Fakes;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Logging.Abstractions;
+global using Microsoft.Extensions.Options;
+global using Microsoft.Extensions.Time.Testing;
+global using NSubstitute;
+global using CSharpApp.Tests.Integration;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Http;

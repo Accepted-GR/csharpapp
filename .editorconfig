@@ -81,3 +81,10 @@ dotnet_diagnostic.IDE0052.severity = warning
 
 # ConfigureAwait is noise in ASP.NET Core (no synchronization context)
 dotnet_diagnostic.CA2007.severity = none
+
+# Test projects
+[src/CSharpApp.Tests/**.cs]
+# Method_Scenario_Expectation is the convention for test names. The underscores
+# are deliberate: they are what makes a failing test readable in the runner
+# output. Scoped to this directory so production code keeps the rule.
+dotnet_diagnostic.CA1707.severity = none

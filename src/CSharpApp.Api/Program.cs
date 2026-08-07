@@ -50,3 +50,14 @@ versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/auth/profile",
     .HasApiVersion(1.0);
 
 app.Run();
+
+/// <summary>
+/// Exposes the implicit Program class generated for top-level statements so
+/// WebApplicationFactory can boot the real application in integration tests.
+/// </summary>
+/// <remarks>
+/// Without this the generated class is internal and inaccessible, and the
+/// integration tests would have to duplicate the pipeline configuration -- which
+/// would mean testing a copy of the application rather than the application.
+/// </remarks>
+public partial class Program;
