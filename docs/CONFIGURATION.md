@@ -15,6 +15,9 @@
 | | `RetryCount` | Retry attempts for transient failures |
 | | `SleepDuration` | Base retry delay, in milliseconds |
 | | `TimeoutSeconds` | Per-attempt timeout |
+| `PerformanceSettings` | `SlowRequestThresholdMs` | Requests at or above this are logged at `Warning` rather than `Information` |
+| | `IncludeResponseTimeHeader` | Emits `X-Response-Time-Ms` on the response |
+| | `CorrelationIdHeader` | Header read from the request and echoed back |
 
 All paths under `RestApiSettings` are **relative** and must not begin with `/`. A
 leading slash resolves against the host root and discards the base path, which was
