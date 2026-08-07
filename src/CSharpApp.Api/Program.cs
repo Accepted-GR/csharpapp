@@ -30,11 +30,7 @@ if (app.Environment.IsDevelopment())
 
 var versionedEndpointRouteBuilder = app.NewVersionedApi();
 
-versionedEndpointRouteBuilder.MapGet("api/v{version:apiVersion}/getproducts",
-        async (IProductsService productsService, CancellationToken cancellationToken) =>
-            await productsService.GetProductsAsync(cancellationToken))
-    .WithName("GetProducts")
-    .HasApiVersion(1.0);
+versionedEndpointRouteBuilder.MapProductEndpoints();
 
 // Exercises the full JWT pipeline: the bearer handler acquires and attaches a
 // token, and upstream rejects the call without one. The product write endpoints

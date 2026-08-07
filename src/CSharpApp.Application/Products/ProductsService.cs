@@ -12,6 +12,8 @@ namespace CSharpApp.Application.Products;
 /// </remarks>
 public sealed partial class ProductsService : IProductsService
 {
+    private const string EntityName = "Product";
+
     private readonly HttpClient _httpClient;
     private readonly RestApiSettings _restApiSettings;
     private readonly ILogger<ProductsService> _logger;
@@ -26,27 +28,81 @@ public sealed partial class ProductsService : IProductsService
         _logger = logger;
     }
 
+    private string BasePath => _restApiSettings.Products!;
+
     public async Task<IReadOnlyCollection<Product>> GetProductsAsync(
         CancellationToken cancellationToken = default)
     {
-        var path = _restApiSettings.Products!;
+        LogRequestingProducts(BasePath);
 
-        LogRequestingProducts(path);
-
-        var products = await _httpClient.GetFromJsonAsync<List<Product>>(path, cancellationToken);
+        var products = await _httpClient.GetFromJsonAsync<List<Product>>(BasePath, cancellationToken);
 
         if (products is null)
         {
             // A literal "null" body is well-formed JSON but not a usable result.
             // Guarding here is what removes the CS8602 from the original code
             // (finding #7) rather than suppressing it.
-            LogNullPayload(path);
+            LogNullPayload(BasePath);
             return [];
         }
 
         LogProductsRetrieved(products.Count);
 
         return products;
+    }
+
+    public async Task<Product> GetProductByIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        using var response = await _httpClient.GetAsync($"{BasePath}/{id}", cancellationToken);
+
+        await UpstreamResponse.EnsureFoundAsync(response, EntityName, id, cancellationToken);
+
+        return await UpstreamResponse.ReadAsync<Product>(response, cancellationToken);
+    }
+
+    public async Task<Product> CreateProductAsync(
+        ProductWriteModel product,
+        CancellationToken cancellationToken = default)
+    {
+        using var response = await _httpClient.PostAsJsonAsync(BasePath, product, cancellationToken);
+
+        // A create can 404 too: upstream rejects an unknown categoryId with the same
+        // EntityNotFoundError shape it uses for a missing product.
+        await UpstreamResponse.EnsureFoundAsync(
+            response, "Category", product.CategoryId ?? 0, cancellationToken);
+
+        var created = await UpstreamResponse.ReadAsync<Product>(response, cancellationToken);
+
+        LogProductCreated(created.Id ?? 0);
+
+        return created;
+    }
+
+    public async Task<Product> UpdateProductAsync(
+        int id,
+        ProductWriteModel product,
+        CancellationToken cancellationToken = default)
+    {
+        using var response = await _httpClient.PutAsJsonAsync($"{BasePath}/{id}", product, cancellationToken);
+
+        await UpstreamResponse.EnsureFoundAsync(response, EntityName, id, cancellationToken);
+
+        var updated = await UpstreamResponse.ReadAsync<Product>(response, cancellationToken);
+
+        LogProductUpdated(id);
+
+        return updated;
+    }
+
+    public async Task DeleteProductAsync(int id, CancellationToken cancellationToken = default)
+    {
+        using var response = await _httpClient.DeleteAsync($"{BasePath}/{id}", cancellationToken);
+
+        await UpstreamResponse.EnsureFoundAsync(response, EntityName, id, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        LogProductDeleted(id);
     }
 
     // Source-generated logging. The generator emits a cached delegate and an
@@ -60,4 +116,13 @@ public sealed partial class ProductsService : IProductsService
 
     [LoggerMessage(Level = LogLevel.Information, Message = "Retrieved {Count} products")]
     private partial void LogProductsRetrieved(int count);
+
+    [LoggerMessage(Level = LogLevel.Information, Message = "Created product {ProductId}")]
+    private partial void LogProductCreated(int productId);
+
+    [LoggerMessage(Level = LogLevel.Information, Message = "Updated product {ProductId}")]
+    private partial void LogProductUpdated(int productId);
+
+    [LoggerMessage(Level = LogLevel.Information, Message = "Deleted product {ProductId}")]
+    private partial void LogProductDeleted(int productId);
 }

@@ -33,6 +33,10 @@ public static class DefaultConfiguration
         // expiry and refresh logic can be tested without waiting in real time.
         services.TryAddSingleton(TimeProvider.System);
 
+        // Picks up ProductWriteModelValidator and CategoryWriteModelValidator, which
+        // the endpoint filters resolve per request.
+        services.AddValidatorsFromAssemblyContaining<ProductsService>();
+
         return services;
     }
 }
