@@ -12,4 +12,14 @@
       <ProjectReference Include="..\CSharpApp.Core\CSharpApp.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <!--
+          JwtExpiry and UpstreamResponse are internal because nothing outside this
+          assembly should call them. They still carry the trickiest logic here
+          (base64url padding, and telling a not-found apart from a bad request),
+          so they are exposed to the test project rather than made public.
+        -->
+        <InternalsVisibleTo Include="CSharpApp.Tests" />
+    </ItemGroup>
+
 </Project>

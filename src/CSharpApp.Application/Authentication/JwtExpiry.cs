@@ -40,7 +40,13 @@ internal static class JwtExpiry
 
             using var document = JsonDocument.Parse(payload);
 
+            // The ValueKind check is load-bearing. TryGetInt64 does not return false
+            // for a non-numeric element -- it throws InvalidOperationException, and
+            // only returns false when the value is a number that will not fit. A
+            // token carrying a string exp would otherwise escape this method as an
+            // unhandled exception and surface as a 500.
             if (document.RootElement.TryGetProperty("exp", out var exp) &&
+                exp.ValueKind == JsonValueKind.Number &&
                 exp.TryGetInt64(out var secondsSinceEpoch))
             {
                 return DateTimeOffset.FromUnixTimeSeconds(secondsSinceEpoch);
