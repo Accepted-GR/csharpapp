@@ -3,6 +3,7 @@
 global using System.Net;
 global using System.Net.Http.Headers;
 global using CSharpApp.Application.Authentication;
+global using CSharpApp.Application.Categories;
 global using CSharpApp.Application.Products;
 global using CSharpApp.Core.Interfaces;
 global using CSharpApp.Core.Settings;

@@ -31,6 +31,7 @@ if (app.Environment.IsDevelopment())
 var versionedEndpointRouteBuilder = app.NewVersionedApi();
 
 versionedEndpointRouteBuilder.MapProductEndpoints();
+versionedEndpointRouteBuilder.MapCategoryEndpoints();
 
 // Exercises the full JWT pipeline: the bearer handler acquires and attaches a
 // token, and upstream rejects the call without one. The product write endpoints
