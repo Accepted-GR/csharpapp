@@ -54,6 +54,11 @@ public static class HttpConfiguration
             .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))
             .AddResilience(httpSettings);
 
+        services.AddHttpClient<ICategoriesService, CategoriesService>(client => Configure(client, baseAddress))
+            .AddHttpMessageHandler<BearerTokenHandler>()
+            .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))
+            .AddResilience(httpSettings);
+
         services.AddHttpClient<IProfileService, ProfileService>(client => Configure(client, baseAddress))
             .AddHttpMessageHandler<BearerTokenHandler>()
             .SetHandlerLifetime(TimeSpan.FromMinutes(httpSettings.LifeTime))

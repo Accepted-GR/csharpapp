@@ -108,6 +108,11 @@ public sealed partial class UpstreamExceptionHandler : IExceptionHandler
         AuthenticationFailedException => (StatusCodes.Status502BadGateway,
             "Could not authenticate against the upstream service.", true),
 
+        // Upstream reports a missing entity as 400 with an EntityNotFoundError
+        // body. The service layer translates it; this reports it honestly.
+        UpstreamNotFoundException => (StatusCodes.Status404NotFound,
+            "The requested resource was not found.", true),
+
         _ => (StatusCodes.Status500InternalServerError,
             "An unexpected error occurred.", false),
     };
