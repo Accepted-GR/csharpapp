@@ -1,5 +1,6 @@
 // Global using directives
 
+global using System.Globalization;
 global using System.Text.Json;
 global using Asp.Versioning.Builder;
 global using CSharpApp.Api.Endpoints;
@@ -14,4 +15,7 @@ global using Microsoft.AspNetCore.Http.HttpResults;
 global using Microsoft.AspNetCore.Mvc;
 global using Polly.CircuitBreaker;
 global using Polly.Timeout;
+global using CSharpApp.Core.Settings;
+global using Microsoft.Extensions.Options;
 global using Serilog;
+global using Serilog.Context;

@@ -29,6 +29,11 @@ public static class DefaultConfiguration
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
+        services.AddOptions<PerformanceSettings>()
+            .Bind(configuration.GetSection(nameof(PerformanceSettings)))
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+
         // Injected rather than reading DateTimeOffset.UtcNow directly, so token
         // expiry and refresh logic can be tested without waiting in real time.
         services.TryAddSingleton(TimeProvider.System);

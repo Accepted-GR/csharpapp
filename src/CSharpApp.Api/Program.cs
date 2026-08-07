@@ -14,10 +14,17 @@ builder.Services.AddApiVersioning();
 // ProblemDetails was registered but never activated, so nothing translated an
 // exception into a payload. See finding #6 in docs/AUDIT.md.
 builder.Services.AddExceptionHandler<UpstreamExceptionHandler>();
+builder.Services.AddSingleton<RequestPerformanceMiddleware>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+// First in the pipeline, so the measurement covers everything after it --
+// including the exception handler. Measuring only the successful path would miss
+// the timings most worth knowing about.
+app.UseMiddleware<RequestPerformanceMiddleware>();
+
 app.UseExceptionHandler();
 app.UseStatusCodePages();
 
