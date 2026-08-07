@@ -1,5 +1,6 @@
 // Global using directives
 
+global using System.Globalization;
 global using System.Net;
 global using System.Net.Http.Json;
 global using System.Text;
@@ -19,3 +20,10 @@ global using Microsoft.Extensions.Logging.Abstractions;
 global using Microsoft.Extensions.Options;
 global using Microsoft.Extensions.Time.Testing;
 global using NSubstitute;
+global using CSharpApp.Tests.Integration;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Http;
